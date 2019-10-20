@@ -1,0 +1,11 @@
+source ../project/bin/activate;
+cd notebooks;
+jupyter nbconvert --to script 1.0-JS-ngrams_bow.ipynb;
+jupyter nbconvert --to script 2.3-JS-ctakes-bow-tfidf.ipynb;
+jupyter nbconvert --to script 2.4-JS-ctakes-time-bow-tfidf.ipynb;
+jupyter nbconvert --to script 2.6-JS-ctakes-relationgram-bow-tfidf.ipynb;
+screen -dmSL run nice -n 19 time ipython 1.0-JS-ngrams_bow.py;
+screen -dmSL run nice -n 19 time ipython 2.3-JS-ctakes-bow-tfidf.py;
+screen -dmSL run nice -n 19 time ipython 2.4-JS-ctakes-time-bow-tfidf.py;
+screen -dmSL run nice -n 19 time ipython 2.6-JS-ctakes-relationgram-bow-tfidf.py;
+cd ..;
